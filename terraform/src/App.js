@@ -15,13 +15,17 @@ const directions = [
   [-1, 0],
 ];
 
+const generateEmptyGrid = () => {
+  const rows = [];
+  for (let i = 0; i < numRows; i++) {
+    rows.push(Array.from(Array(numCols), () => 0));
+  }
+  return rows;
+};
+
 function App() {
   const [grid, setGrid] = useState(() => {
-    const rows = [];
-    for (let i = 0; i < numRows; i++) {
-      rows.push(Array.from(Array(numCols), () => 0));
-    }
-    return rows;
+    return generateEmptyGrid();
   });
 
   const [running, setRunning] = useState(false);
@@ -33,12 +37,13 @@ function App() {
     if (!runningRef.current) {
       return;
     }
-    setGrid((g) => {
-      return produce(g, (gridCopy) => {
+
+    setGrid(g => {
+      return produce(g, gridCopy => {
         for (let i = 0; i < numRows; i++) {
           for (let k = 0; k < numCols; k++) {
             let neighbors = 0;
-            directions.forEach((x, y) => {
+            directions.forEach(([x, y]) => {
               const newI = i + x;
               const newK = k + y;
               if (newI >= 0 && newI < numRows && newK >= 0 && newK < numCols) {
@@ -55,7 +60,7 @@ function App() {
       });
     });
 
-    setTimeout(runSimulation, 1000);
+    setTimeout(runSimulation, 100);
   }, []);
 
   return (
@@ -65,11 +70,29 @@ function App() {
           setRunning(!running);
           if (!running) {
             runningRef.current = true;
-              runSimulation()
+            runSimulation();
           }
         }}
       >
         {running ? "stop" : "start"}
+      </button>
+      <button
+        onClick={() => {
+          setGrid(generateEmptyGrid());
+        }}
+      >
+        clear
+      </button>
+      <button
+        onClick={() => {
+          const rows = [];
+          for (let i = 0; i < numRows; i++) {
+            rows.push(Array.from(Array(numCols), () => Math.random() > .9 ? 1 :0));
+          }
+          setGrid(rows);
+        }}
+      >
+        random
       </button>
       <div
         style={{
