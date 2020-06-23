@@ -1,0 +1,5 @@
+class Nanobot {
+    constructor(obj) {
+        
+    }
+}
