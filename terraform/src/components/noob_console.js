@@ -2,7 +2,7 @@ import React from "react";
 import { ContainerDiv} from "../styles";
 import { LogoAnimate } from "../styles";
 import Logo from "../media/images/logo.png";
-import Grid from "../components/grid"
+import Noob from "../components/noob_noob"
 
 
 const Console = () => {
@@ -12,7 +12,7 @@ const Console = () => {
       <LogoAnimate>
         <img src={Logo} alt="logo" style={{ width: "80%" }} />
       </LogoAnimate>
-      <Grid />
+      <Noob />
     </ContainerDiv>
   );
 };

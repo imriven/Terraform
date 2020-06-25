@@ -13,7 +13,7 @@ const Intro = () => {
       const history = useHistory();
 
         const routeChange = () => {
-        history.push("/terraform-console");
+        history.push("/terraform-menu");
   }
     
   return (

@@ -38,7 +38,7 @@ const generateEmptyGrid = () => {
 };
 
 
-function Grid() {
+function Play_net() {
   //sets initial state to be empty grid
   const [grid, setGrid] = useState(() => {
     return generateEmptyGrid();
@@ -60,6 +60,9 @@ function Grid() {
         //looping over rows and columns
         for (let i = 0; i < numRows; i++) {
           for (let k = 0; k < numCols; k++) {
+            if (["Water", "Carbon"].includes(g[i][k].type)) {
+              continue
+            }
             let neighbors = 0;
             //eight checks for each cell - directions
             directions.forEach(([x, y]) => {
@@ -67,7 +70,11 @@ function Grid() {
               const newK = k + y;
               //check that we are in bounds
               if (newI >= 0 && newI < numRows && newK >= 0 && newK < numCols) {
-                neighbors += g[newI][newK].status;//points to nanobot
+                if (g[newI][newK].type == "Carbon" && g[i][k].status) {
+                    gridCopy[newI][newK] = new Cell(0, "blue", "Water")
+             
+                }
+                  neighbors += g[newI][newK].status;//points to nanobot
               }
             });
             if (neighbors < 2 || neighbors > 3) {
@@ -124,20 +131,12 @@ function Grid() {
                   const r = Math.random()
                   let type;
                   let color;
-                  const status = Math.random() > 0.9 ? 1 : 0
-                  if (r < 0.5) {
+                  let status = Math.random() > 0.9 ? 1 : 0
+                  if (r < 0.9) {
                     type = "Nanobot";
                     color = status ? "purple" : undefined;
-                  } else if (r < 0.6) {
-                    type = "Nitrogen";
-                    color = "green"
-                  } else if (r < 0.7) {
-                    type = "Oxygen";
-                    color = "blue"
-                  } else if (r < 0.8) {
-                    type = "Hydrogen";
-                    color = "yellow"
                   } else {
+                    status = 0
                     type = "Carbon"
                     color = "black"
                   }
@@ -166,11 +165,18 @@ function Grid() {
           rows.map((col, k) => (
             <div
               key={`${i}-${k}`}
-              onClick={() => {
+              onClick={(e) => {
                 const newGrid = produce(grid, (gridCopy) => {
-                  const status = grid[i][k].status ? 0 : 1;
-                  const color = status ? undefined : "purple";
-                  const n = new Cell(status, color, "Nanobot" )
+                  let n;
+                  if (e.detail == 2) {
+                    n = new Cell(0, "black", "Carbon" )  
+                  } else {
+                   const status = grid[i][k].status ? 0 : 1;
+                    const color = status ? undefined : "purple";
+                   n = new Cell(status, color, "Nanobot");   
+                  }
+                  
+                
                   gridCopy[i][k] = n
                 });
                 setGrid(newGrid);
@@ -189,6 +195,6 @@ function Grid() {
   );
 }
 
-export default Grid;
+export default Play_net;
 
 // https://www.youtube.com/watch?v=DvVt11mPuM0
