@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Intro from "./components/intro";
-import Console from "./components/console";
+import Menu from "./components/menu";
 import Video from "./media/videos/space_sky.mp4";
 
 import { VideoBackground, BackgroundContainer } from "./styles";
@@ -31,7 +31,7 @@ function App() {
         <BackgroundContainer>
           <Switch>
             <Route exact path="/" component={Intro} />
-            <Route exact path="/terraform-console" component={Console} />
+            <Route exact path="/terraform-menu" component={Menu} />
           </Switch>
         </BackgroundContainer>
       </VideoBackground>
@@ -40,34 +40,3 @@ function App() {
 }
 
 export default App;
-
-// https://www.youtube.com/watch?v=DvVt11mPuM0
-
-
-
-
-// const App = () => {
-//   return (
-//     <AllContainer>
-//       <SuperNav>
-//         <SuperHeader>Lambda Eats</SuperHeader>
-//         <div>
-//           <StyledLink to="/">Home</StyledLink>
-//           <StyledLink to="/pizza">Order</StyledLink>
-//         </div>
-//       </SuperNav>
-//       <SuperContainer>
-//         {/* Routes / Paths */}
-//         <Route exact path="/">
-//           <Home />
-//         </Route>
-//         <Route path="/pizza">
-//           <Pizza />
-//         </Route>
-//         <Route path="/success">
-//           <Success />
-//         </Route>
-//       </SuperContainer>
-//     </AllContainer>
-//   );
-// };
