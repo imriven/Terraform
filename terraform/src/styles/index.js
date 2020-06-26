@@ -51,7 +51,20 @@ width: 10%;
 background: linear-gradient(19deg, rgba(131,58,180,1) 0%, rgba(29,253,89,0.6110819327731092) 50%, rgba(69,177,252,1) 100%);
 color:black;
 `
-
+export const AwesomeButton3 = Styled.button`
+display:flex;
+justify-content: center;
+text-align: justify;
+box-shadow: 5px 5px 8px black;
+padding: 1% 5%;
+border-radius: 5px;
+font-size: 1.5em;
+margin: 3% 5% 20% 5%;
+outline:none;
+width: 10%;
+background: linear-gradient(19deg, rgba(131,58,180,1) 0%, rgba(29,253,89,0.6110819327731092) 50%, rgba(69,177,252,1) 100%);
+color:black;
+`;
 
 //general
 export const Container = Styled.div`

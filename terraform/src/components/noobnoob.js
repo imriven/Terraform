@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import produce from "immer";
-import { AwesomeButton2, Container } from "../styles";
+import { AwesomeButton3, Container } from "../styles";
 
 const numRows = 50;
 const numCols = 50;
@@ -114,7 +114,7 @@ function Noob() {
   return (
     <>
       <Container>
-        <AwesomeButton2
+        <AwesomeButton3
           //toggle
           onClick={() => {
             setRunning(!running);
@@ -125,17 +125,17 @@ function Noob() {
           }}
         >
           {running ? "stop" : "start"}
-        </AwesomeButton2>
-        <AwesomeButton2
+        </AwesomeButton3>
+        <AwesomeButton3
           onClick={() => {
             //resets state
             setGrid(generateCarbonGrid());
           }}
         >
           clear
-        </AwesomeButton2>
+        </AwesomeButton3>
 
-        <AwesomeButton2 onClick={routeChange}>HOME</AwesomeButton2>
+        <AwesomeButton3 onClick={routeChange}>HOME</AwesomeButton3>
       </Container>
       {/*display grid*/}
       <div
