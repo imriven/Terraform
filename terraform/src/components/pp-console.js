@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerDiv, Container3, ContainerRow, } from "../styles";
+import { ContainerDiv, Container3, ContainerRow, Container } from "../styles";
 import { LogoAnimate } from "../styles";
 import Logo from "../media/images/logo.png";
 import PlayNet from "../components/play-planet"
@@ -19,25 +19,24 @@ const PPConsole = () => {
       </LogoAnimate>
       <Container3>
         <ContainerRow>
-          <div style={{ margins: "25%" }}>
+          <div style={{ marginBottom: "3%" }}>
             <img src={Nanobots} alt="Nanobots" style={{ width: "100%" }} />
           </div>
-          <div style={{ margins: "25%" }}>
+          <div style={{ marginBottom: "3%" }}>
             <img src={Carbon} alt="Carbon" style={{ width: "100%" }} />
           </div>
         </ContainerRow>
-        <ContainerRow>
-          <div style={{margins: "25%"}}>
+        <Container>
+          <div style={{ marginBottom: "3%" }}>
             <img src={Start} alt="Start" style={{ width: "100%" }} />
           </div>
-          <div style={{ margins: "25%" }}>
+          <div style={{ marginBottom: "3%" }}>
             <img src={Stop} alt="Stop" style={{ width: "100%" }} />
           </div>
-        </ContainerRow>
+        </Container>
       </Container3>
-      
+
       <PlayNet />
-   
     </ContainerDiv>
   );
 };
