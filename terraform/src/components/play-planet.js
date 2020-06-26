@@ -1,7 +1,8 @@
 import React, { useState, useCallback, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import produce from "immer";
-import {AwesomeButton2, Container} from "../styles";
+import { AwesomeButton2, Container, Para, ContainerRow} from "../styles";
+
 
 
 const numRows = 50;
@@ -39,6 +40,9 @@ const generateEmptyGrid = () => {
 
 
 function PlayNet() {
+  const [generation, setGeneration] = useState(0)
+  // const generationRef = useRef()
+  // generationRef.current = 0
   //sets initial state to be empty grid
   const [grid, setGrid] = useState(() => {
     return generateEmptyGrid();
@@ -55,6 +59,7 @@ function PlayNet() {
     }
     //setting Grid - using callback form of set state for safe access to current grid (g -current state)
     setGrid((g) => {
+    setGeneration(old => old +=1)
       // produce creates a deep copy of current state which is then modifiable via callback function. This is then returned to set the current state.
       return produce(g, (gridCopy) => {
         //looping over rows and columns
@@ -101,6 +106,9 @@ function PlayNet() {
   return (
     <>
       <Container>
+        <Para>Generation: {generation}</Para>
+      </Container>
+      <Container>
         <AwesomeButton2
           //toggle
           onClick={() => {
@@ -117,6 +125,7 @@ function PlayNet() {
           onClick={() => {
             //resets state
             setGrid(generateEmptyGrid());
+            setGeneration(0);
           }}
         >
           clear
@@ -128,21 +137,21 @@ function PlayNet() {
             for (let i = 0; i < numRows; i++) {
               rows.push(
                 Array.from(Array(numCols), () => {
-                  const r = Math.random()
+                  const r = Math.random();
                   let type;
                   let color;
-                  let status = Math.random() > 0.9 ? 1 : 0
+                  let status = Math.random() > 0.9 ? 1 : 0;
                   if (r < 0.9) {
                     type = "Nanobot";
                     color = status ? "purple" : undefined;
                   } else {
-                    status = 0
-                    type = "Carbon"
-                    color = "black"
+                    status = 0;
+                    type = "Carbon";
+                    color = "black";
                   }
-                  
+
                   const n = new Cell(status, color, type);
-                  return n
+                  return n;
                 })
               );
             }
@@ -170,15 +179,14 @@ function PlayNet() {
                 const newGrid = produce(grid, (gridCopy) => {
                   let n;
                   if (e.detail === 2) {
-                    n = new Cell(0, "black", "Carbon" )  
+                    n = new Cell(0, "black", "Carbon");
                   } else {
-                   const status = grid[i][k].status ? 0 : 1;
+                    const status = grid[i][k].status ? 0 : 1;
                     const color = status ? undefined : "purple";
-                   n = new Cell(status, color, "Nanobot");   
+                    n = new Cell(status, color, "Nanobot");
                   }
-                  
-                
-                  gridCopy[i][k] = n
+
+                  gridCopy[i][k] = n;
                 });
                 setGrid(newGrid);
               }}

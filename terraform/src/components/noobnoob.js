@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import produce from "immer";
-import { AwesomeButton3, Container } from "../styles";
+import { AwesomeButton3, Container, ContainerRow, Para } from "../styles";
 
 const numRows = 50;
 const numCols = 50;
@@ -52,8 +52,10 @@ const generateCarbonGrid = () => {
 };
 
 function Noob() {
+    const [generation, setGeneration] = useState(0);
   //sets initial state to be empty grid
   const [grid, setGrid] = useState(() => {
+    setGeneration((old) => (old += 1));
     return generateCarbonGrid();
   });
   // sets state to record whether simulation is running or not
@@ -113,6 +115,9 @@ function Noob() {
 
   return (
     <>
+      <ContainerRow>
+        <Para>Generation: {generation}</Para>
+      </ContainerRow>
       <Container>
         <AwesomeButton3
           //toggle

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Intro from "./components/intro";
@@ -11,6 +11,11 @@ import Music from "./media/music/TravelersTale.mp3"
 import Sound from "react-sound";
 
 function App() {
+
+ const [music, setMusic] = useState(true)
+
+
+
   return (
     <>
       <VideoBackground>
@@ -51,11 +56,11 @@ function App() {
             left: 0,
           }}
         >
-          <Sound
+          {music ? <Sound
             url={Music}
             playStatus={Sound.status.PLAYING}
-            loop="true"
-          />
+            loop={true}
+          /> : null}
           
           <a href="https://soundcloud.com/musictenno/a-travelers-tale-1">
             Music: A Traveler's Tale by Tenno
