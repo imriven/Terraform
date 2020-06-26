@@ -134,7 +134,7 @@ function Noob() {
         >
           clear
         </AwesomeButton2>
-       
+
         <AwesomeButton2 onClick={routeChange}>HOME</AwesomeButton2>
       </Container>
       {/*display grid*/}
@@ -142,6 +142,7 @@ function Noob() {
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${numCols}, 20px)`,
+          justifyContent: "center",
         }}
       >
         {grid.map((rows, i) =>

@@ -50,7 +50,8 @@ outline:none;
 width: 10%;
 background: linear-gradient(19deg, rgba(131,58,180,1) 0%, rgba(29,253,89,0.6110819327731092) 50%, rgba(69,177,252,1) 100%);
 color:black;
-`;
+`
+
 
 //general
 export const Container = Styled.div`
@@ -68,7 +69,7 @@ flex-direction: row;
 flex-wrap: nowrap;
 margin-top:1%;
 justify-content: space-between;
-`;
+`
 
 export const Container2 = Styled.div`
 display:flex;
@@ -82,7 +83,7 @@ width:48%;
 border: 5px solid;
 border-image-source: linear-gradient(60deg, rgba(63, 121, 191, .4), rgb(0,143,104), rgb(63, 121, 191), rgba(63, 121, 191, 0.48));
 border-image-slice: 1;
-`;
+`
 
 export const Container3 = Styled.div`
 display:flex;
@@ -96,7 +97,7 @@ width:100%;
 border: 5px solid;
 border-image-source: linear-gradient(60deg, rgba(63, 121, 191, .4), rgb(0,143,104), rgb(63, 121, 191), rgba(63, 121, 191, 0.48));
 border-image-slice: 1;
-`;
+`
 
 export const Para = Styled.p`
 display:flex;
@@ -114,7 +115,8 @@ line-height: 2em;
 export const ContainerDiv = Styled.div`
 display:flex;
 flex-direction: column;
-flex-wrap:wrap;
+justify-content: center;
+flex-wrap: wrap;
 align-content: center;
 box-shadow: 5px 5px 8px #b7472a;
 padding: 3% 5% 15% 5%;
@@ -125,7 +127,7 @@ width: 90%;
 background: linear-gradient(19deg, rgba(131,58,180,0.8) 16%, rgba(69,177,252,0.8) 76%);
 color:white;
 margin: 5% 30%;
-`;
+`
 
 //animations
 export const LogoAnimate = Styled.div`

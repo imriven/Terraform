@@ -7,6 +7,8 @@ import Video from "./media/videos/space_sky.mp4";
 import PPConsole from "./components/pp-console";
 import NoobConsole from "./components/noob-console";
 import { VideoBackground, BackgroundContainer } from "./styles";
+import Music from "./media/music/TravelersTale.mp3"
+import Sound from "react-sound";
 
 function App() {
   return (
@@ -41,7 +43,7 @@ function App() {
             />
           </Switch>
         </BackgroundContainer>
-        {/* <div
+        <div
           style={{
             margin: "10px 0 0 10px",
             position: "absolute",
@@ -49,23 +51,17 @@ function App() {
             left: 0,
           }}
         >
-          <p>
-            <audio
-              src="./media/music/A Travelers Tale.mp3"
-              autoplay="true"
-              loop
-              type="audio/mpeg"
-            ></audio>
-            <a href="https://soundcloud.com/musictenno/a-travelers-tale-1">
-              Music: A Traveler's Tale by Tenno
-            </a>
-          </p>
-        </div> */}
-        <audio
-          autoplay
-          src="https://soundcloud.com/musictenno/a-travelers-tale-1"
-          type="audio/mpeg"
-        ></audio>
+          <Sound
+            url={Music}
+            playStatus={Sound.status.PLAYING}
+            loop="true"
+          />
+          
+          <a href="https://soundcloud.com/musictenno/a-travelers-tale-1">
+            Music: A Traveler's Tale by Tenno
+          </a>
+        </div>
+       
       </VideoBackground>
     </>
   );

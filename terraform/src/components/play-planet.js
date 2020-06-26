@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import produce from "immer";
-import {AwesomeButton2, Container} from "../styles";
+import {AwesomeButton2, Container, Container4} from "../styles";
 
 
 const numRows = 50;
@@ -159,6 +159,7 @@ function PlayNet() {
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${numCols}, 20px)`,
+          justifyContent: "center",
         }}
       >
         {grid.map((rows, i) =>
@@ -186,6 +187,7 @@ function PlayNet() {
                 height: 20,
                 backgroundColor: grid[i][k].color,
                 border: "dashed 1px black",
+                alignItems: "center",
               }}
             />
           ))
