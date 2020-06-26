@@ -6,7 +6,7 @@ import Menu from "./components/menu";
 import Video from "./media/videos/space_sky.mp4";
 import PPConsole from "./components/pp-console";
 import NoobConsole from "./components/noob-console";
-import { VideoBackground, BackgroundContainer, Para } from "./styles";
+import { VideoBackground, BackgroundContainer } from "./styles";
 import Music from "./media/music/TravelersTale.mp3"
 import Sound from "react-sound";
 

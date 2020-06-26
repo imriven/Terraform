@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import produce from "immer";
-import { AwesomeButton2, Container, Para, ContainerRow} from "../styles";
+import { AwesomeButton2, Container, Para} from "../styles";
 
 
 
