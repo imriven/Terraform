@@ -6,7 +6,7 @@ import Menu from "./components/menu";
 import Video from "./media/videos/space_sky.mp4";
 import PPConsole from "./components/pp-console";
 import NoobConsole from "./components/noob-console";
-import { VideoBackground, BackgroundContainer } from "./styles";
+import { VideoBackground, BackgroundContainer, Para } from "./styles";
 import Music from "./media/music/TravelersTale.mp3"
 import Sound from "react-sound";
 
@@ -56,17 +56,22 @@ function App() {
             left: 0,
           }}
         >
-          {music ? <Sound
-            url={Music}
-            playStatus={Sound.status.PLAYING}
-            loop={true}
-          /> : null}
-          
+          {music ? (
+            <Sound url={Music} playStatus={Sound.status.PLAYING} loop={true} />
+          ) : null}
+
           <a href="https://soundcloud.com/musictenno/a-travelers-tale-1">
             Music: A Traveler's Tale by Tenno
           </a>
+          <p style={{color: "purple", margin: "5% 0 0 5%"}}
+            //toggle
+            onClick={() => {
+              setMusic((old) => !old);
+            }}
+          >
+            {music ? "STOP" : "START"}
+          </p>
         </div>
-       
       </VideoBackground>
     </>
   );
