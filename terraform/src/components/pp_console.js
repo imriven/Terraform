@@ -5,7 +5,7 @@ import Logo from "../media/images/logo.png";
 import Play_net from "../components/play_planet"
 
 
-const Console = () => {
+const PPConsole = () => {
 
   return (
     <ContainerDiv>
@@ -17,6 +17,6 @@ const Console = () => {
   );
 };
 
-export default Console;
+export default PPConsole;
 
 

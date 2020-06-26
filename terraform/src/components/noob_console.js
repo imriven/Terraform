@@ -2,10 +2,10 @@ import React from "react";
 import { ContainerDiv} from "../styles";
 import { LogoAnimate } from "../styles";
 import Logo from "../media/images/logo.png";
-import Noob from "../components/noob_noob"
+import Noob from "../components/noobnoob"
 
 
-const Console = () => {
+const NoobConsole = () => {
 
   return (
     <ContainerDiv>
@@ -17,6 +17,6 @@ const Console = () => {
   );
 };
 
-export default Console;
+export default NoobConsole;
 
 

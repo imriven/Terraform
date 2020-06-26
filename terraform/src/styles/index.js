@@ -29,7 +29,7 @@ box-shadow: 5px 5px 8px black;
 padding: 1% 12%;
 border-radius: 5px;
 font-size: 1.5em;
-margin: 15% 1%;
+margin-bottom:5%;
 outline:none;
 width: 10%;
 background: linear-gradient(19deg, rgba(131,58,180,1) 0%, rgba(29,253,89,0.6110819327731092) 50%, rgba(69,177,252,1) 100%);
@@ -62,6 +62,28 @@ align-content:center;
 margin-top:1%;
 `
 
+export const ContainerRow = Styled.div`
+display:flex;
+flex-direction: row;
+flex-wrap: nowrap;
+margin-top:1%;
+justify-content: space-between;
+`;
+
+export const Container2 = Styled.div`
+display:flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-items: center;
+align-content:center;
+margin-top:1%;
+padding-top: 5%;
+width:48%;
+border: 5px solid;
+border-image-source: linear-gradient(60deg, rgba(63, 121, 191, .4), rgb(0,143,104), rgb(63, 121, 191), rgba(63, 121, 191, 0.48));
+border-image-slice: 1;
+`;
+
 export const Para = Styled.p`
 display:flex;
 text-align: center;
@@ -70,6 +92,7 @@ font-size: 1.5em;
 width:50;
 margin: 0 auto;
 font-family: 'Open Sans', sans-serif;
+padding: 5%;
 margin-bottom: 3%;
 line-height: 2em;
 `;
@@ -87,7 +110,7 @@ outline:none;
 width: 90%;
 background: linear-gradient(19deg, rgba(131,58,180,0.8) 16%, rgba(69,177,252,0.8) 76%);
 color:white;
-margin: 15% 40%;
+margin: 5% 30%;
 `;
 
 //animations

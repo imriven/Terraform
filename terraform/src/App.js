@@ -34,6 +34,31 @@ function App() {
             <Route exact path="/terraform-menu" component={Menu} />
           </Switch>
         </BackgroundContainer>
+        {/* <div
+          style={{
+            margin: "10px 0 0 10px",
+            position: "absolute",
+            top: 0,
+            left: 0,
+          }}
+        >
+          <p>
+            <audio
+              src="./media/music/A Travelers Tale.mp3"
+              autoplay="true"
+              loop
+              type="audio/mpeg"
+            ></audio>
+            <a href="https://soundcloud.com/musictenno/a-travelers-tale-1">
+              Music: A Traveler's Tale by Tenno
+            </a>
+          </p>
+        </div> */}
+        <audio
+          autoplay
+          src="https://soundcloud.com/musictenno/a-travelers-tale-1"
+          type="audio/mpeg"
+        ></audio>
       </VideoBackground>
     </>
   );
