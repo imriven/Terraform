@@ -4,7 +4,7 @@ import {
     ContainerDiv,
     AwesomeButton,
     Container,
-    Para
+    Para2
 } from "../styles";
 import { LogoAnimate } from "../styles";
 import Logo from "../media/images/logo.png";
@@ -21,15 +21,15 @@ const Intro = () => {
       <LogoAnimate>
         <img src={Logo} alt="logo" style={{ width: "80%" }} />
       </LogoAnimate>
-      <Para>
+      <Para2>
         This is John Conway's "Game Of Life" Re-imagined! The game is played on
         a grid of squares called cells, each cell is black (alive) or white
         (dead). When people are playing the game, they start by making some dead
         cells alive. Then the alive cells can make other cells alive or dead
         because of the rules of the game. The rules are:
-      </Para>
+      </Para2>
       <br />
-      <Para>
+      <Para2>
         &bull; Any alive cell that is touching less than two alive neighbors
         dies.
         <br />
@@ -39,8 +39,8 @@ const Intro = () => {
         <br />
         &bull;Any dead cell touching exactly three alive neighbors becomes
         alive.{" "}
-      </Para>
-      <Para>
+      </Para2>
+      <Para2>
         The way a player sets up the first alive cells starts the game. The
         first level (generation) is made by using the 4 rules. After the player
         is done changing the cells, they do the same thing all over again to
@@ -50,7 +50,7 @@ const Intro = () => {
         terraform a planet with nanobots. You will be in charge of bot
         placement. But that's not all. Your task is to terraform a planet by
         placing nanobots to transform carbons to water.{" "}
-      </Para>
+      </Para2>
       <Container>
         <AwesomeButton onClick={routeChange}>Proceed</AwesomeButton>
       </Container>

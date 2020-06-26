@@ -123,6 +123,19 @@ font-family: 'Open Sans', sans-serif;
 padding: 5%;
 margin-bottom: 3%;
 line-height: 2em;
+`
+
+export const Para2 = Styled.p`
+display:flex;
+text-align: center;
+color:white;
+font-size: 1.5em;
+width:50;
+margin: 0 auto;
+font-family: 'Open Sans', sans-serif;
+padding: 2%;
+margin-bottom: 3%;
+line-height: 2em;
 `;
 
 export const ContainerDiv = Styled.div`
