@@ -84,7 +84,7 @@ function Noob() {
               const newK = k + y;
               //check that we are in bounds
               if (newI >= 0 && newI < numRows && newK >= 0 && newK < numCols) {
-                if (g[newI][newK].type == "Carbon" && g[i][k].status) {
+                if (g[newI][newK].type === "Carbon" && g[i][k].status) {
                   gridCopy[newI][newK] = new Cell(0, "blue", "Water");
                 }
                 neighbors += g[newI][newK].status; //points to nanobot

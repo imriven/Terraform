@@ -4,7 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import Intro from "./components/intro";
 import Menu from "./components/menu";
 import Video from "./media/videos/space_sky.mp4";
-
+import PPConsole from "./components/pp-console";
+import NoobConsole from "./components/noob-console";
 import { VideoBackground, BackgroundContainer } from "./styles";
 
 function App() {
@@ -32,6 +33,12 @@ function App() {
           <Switch>
             <Route exact path="/" component={Intro} />
             <Route exact path="/terraform-menu" component={Menu} />
+            <Route exact path="/terraform-play_planet" component={PPConsole} />
+            <Route
+              exact
+              path="/terraform-planet_noob_noob"
+              component={NoobConsole}
+            />
           </Switch>
         </BackgroundContainer>
         {/* <div

@@ -38,7 +38,7 @@ const generateEmptyGrid = () => {
 };
 
 
-function Play_net() {
+function PlayNet() {
   //sets initial state to be empty grid
   const [grid, setGrid] = useState(() => {
     return generateEmptyGrid();
@@ -70,7 +70,7 @@ function Play_net() {
               const newK = k + y;
               //check that we are in bounds
               if (newI >= 0 && newI < numRows && newK >= 0 && newK < numCols) {
-                if (g[newI][newK].type == "Carbon" && g[i][k].status) {
+                if (g[newI][newK].type === "Carbon" && g[i][k].status) {
                     gridCopy[newI][newK] = new Cell(0, "blue", "Water")
              
                 }
@@ -168,7 +168,7 @@ function Play_net() {
               onClick={(e) => {
                 const newGrid = produce(grid, (gridCopy) => {
                   let n;
-                  if (e.detail == 2) {
+                  if (e.detail === 2) {
                     n = new Cell(0, "black", "Carbon" )  
                   } else {
                    const status = grid[i][k].status ? 0 : 1;
@@ -195,6 +195,4 @@ function Play_net() {
   );
 }
 
-export default Play_net;
-
-// https://www.youtube.com/watch?v=DvVt11mPuM0
+export default PlayNet;

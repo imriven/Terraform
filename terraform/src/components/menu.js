@@ -2,9 +2,7 @@ import React from "react";
 import { ContainerDiv, AwesomeButton, ContainerRow, Para, Container2 } from "../styles";
 import { LogoAnimate } from "../styles";
 import Logo from "../media/images/logo.png";
-import { Route, Switch, useHistory } from "react-router-dom";
-import PPConsole from "../components/pp_console";
-import NoobConsole from "../components/noob_console";
+import {useHistory } from "react-router-dom";
 import Planet1 from "../media/images/noob_noob.png"
 import Planet2 from "../media/images/play_net.png"
 import PlanetText1 from "../media/images/noob_txt.png"
@@ -27,14 +25,6 @@ const Menu = () => {
       <LogoAnimate>
         <img src={Logo} alt="logo" style={{ width: "80%" }} />
       </LogoAnimate>
-      <Switch>
-        <Route exact path="/terraform-play_planet" component={PPConsole} />
-        <Route
-          exact
-          path="/terraform-planet_noob_noob"
-          component={NoobConsole}
-        />
-      </Switch>
       <ContainerRow>
         <Container2>
           <img src={Planet1} alt="Planet Noob_Noob" style={{ width: "70%" }} />
