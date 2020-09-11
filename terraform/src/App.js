@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Intro from "./components/intro";
@@ -7,14 +7,11 @@ import Video from "./media/videos/space_sky.mp4";
 import PPConsole from "./components/pp-console";
 import NoobConsole from "./components/noob-console";
 import { VideoBackground, BackgroundContainer } from "./styles";
-import Music from "./media/music/TravelersTale.mp3"
+import Music from "./media/music/TravelersTale.mp3";
 import Sound from "react-sound";
 
 function App() {
-
- const [music, setMusic] = useState(true)
-
-
+  const [music, setMusic] = useState(true);
 
   return (
     <>
@@ -63,13 +60,14 @@ function App() {
           <a href="https://soundcloud.com/musictenno/a-travelers-tale-1">
             Music: A Traveler's Tale by Tenno
           </a>
-          <p style={{color: "purple", margin: "5% 0 0 5%"}}
+          <p
+            style={{ color: "purple", margin: "5% 0 0 5%" }}
             //toggle
             onClick={() => {
               setMusic((old) => !old);
             }}
           >
-            {music ? "STOP" : "START"}
+            {music ? "START" : "STOP"}
           </p>
         </div>
       </VideoBackground>
